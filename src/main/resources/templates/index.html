@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<!--/*@thymesVar id="firstName" type="java.lang.String"*/-->
+<h1 th:text="'Hello ' + ${firstName}">Hello World</h1>
+<!--/*@thymesVar id="phoneNumber" type="java.lang.Integer"*/-->
+<p th:text="'You\'r phone number is ' + ${phoneNumber}">+48 123 456 789</p>
+<h2 th:text="${message}"></h2>
+<div th:if="${user}">
+    <!--/*@thymesVar id="user" type="com.sda.springcourse.model.User"*/-->
+    <h2 th:text="${user.firstName}">First Name</h2>
+    <h2 th:text="${user.lastName}">Last Name</h2>
+    <p th:text="${user.phoneNumber}">Phone number</p>
+</div>
+</body>
+</html>
