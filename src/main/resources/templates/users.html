@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <!--/*@thymesVar id="users" type="java.util.List<com.sda.springcourse.model.User>"*/-->
+    <li th:each="user : ${users}">
+        <a th:href="'/test/users/' + ${user.id}" href="#">Profile</a>
+        <h1 th:text="${user.firstName} + ' ' + ${user.lastName}">Szymon Nowak</h1>
+        <p th:text="'Phone Number: ' + ${user.phoneNumber}">Phone Number: 123457</p>
+    </li>
+</ul>
+</body>
+</html>

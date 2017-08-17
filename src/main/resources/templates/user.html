@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div class="user-section">
+    <h1 th:text="${user.firstName} + ' ' + ${user.lastName}">Szymon Nowak</h1>
+    <p th:text="'Phone Number: ' + ${user.phoneNumber}">Phone Number: 123456789</p>
+</div>
+</body>
+</html>
