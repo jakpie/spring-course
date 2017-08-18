@@ -16,7 +16,7 @@
     <div th:if="${allNews.isEmpty()}" class="alert">
         <h1>There is no news for current user</h1>
     </div>
-    <div th:unless="${allNews.isEmpty()}" style="padding: 0 10% 0 10%">
+    <div th:include="fragments/news :: basic-news-table (allNews=${allNews})" th:unless="${allNews.isEmpty()}" style="padding: 0 10% 0 10%">
         <table border="1">
             <thead style="font-weight: bold;">
             <td>Img</td>
@@ -26,16 +26,16 @@
             </thead>
             <tbody>
             <!--/*@thymesVar id="allNews" type="java.util.List<com.sda.springcourse.model.News>"*/-->
-            <tr th:each="news : ${allNews}">
+            <tr>
                 <td>
-                    <img style="width: 100px; height: 100px;" th:src="${news.smallImgLink}"
+                    <img style="width: 100px; height: 100px;"
                          src="http://www.dailyworldfacts.com/wp-content/uploads/2011/06/facts-about-cat-fallen-cat.jpg"/>
                 </td>
                 <td>
-                    <h1 th:text="${news.title}">First Cat</h1>
+                    <h1>First Cat</h1>
                 </td>
                 <td>
-                    <p th:text="${news.abbreviateDescription}">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                         nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
                         dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
@@ -43,7 +43,7 @@
                         laborum</p>
                 </td>
                 <td>
-                    <a th:href="'/news/' + ${news.id}" href="/news/1">Link</a>
+                    <a href="/news/1">Link</a>
                 </td>
             </tr>
             </tbody>
@@ -52,8 +52,3 @@
 </div>
 </body>
 </html>
-
-<!--1. zaimplementowac metode z NewsRepository-->
-<!--2. wstrzyknac NewsRepository do UserController-->
-<!--3. w metodzie odpowiedzialnej za wysweitlanie danego usera dodac newsy do modelAndView-->
-<!--4. wyswietlic je w template user.html   -->
