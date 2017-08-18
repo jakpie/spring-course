@@ -65,5 +65,30 @@
         </table>
     </div>
 </div>
+
+<br/>
+<br/>
+<br/>
+
+<!--1. formularz wysyla post na /users/{id}/news-->
+<!--2. userId - hiddenFields-->
+<!--3. title description smallImgLink bigImgLink - field do wstawiania wartosci-->
+
+1. UserController -> Tworzymy PostMapping na /users/{id}/news -> @ModelAttribute
+2. NewsRepository -> dodajemy metode add(News news)
+3. powyzsza metode uzywamy w postMappingu
+4. wyswietlamy alert succes message: Successfully added news
+<form method="post" action="/users/0/news" th:action="'/users/' + ${user.id} + '/news'">
+    <input type="hidden" value="0" name="userId" th:value="${user.id}">
+
+    <input type="text" placeholder="title" name="title">
+    <input type="text" placeholder="description" name="description">
+    <input type="text" placeholder="smallImgLink" name="smallImgLink">
+    <input type="text" placeholder="bigImgLink" name="bigImgLink">
+
+    <button type="submit">Submit</button>
+</form>
+
+
 </body>
 </html>
