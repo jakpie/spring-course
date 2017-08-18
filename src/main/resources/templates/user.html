@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .alert-error {
+            background-color: red;
+        }
+        .alert-basic {
+            background-color: green;
+        }
+    </style>
 </head>
 <body>
+<div th:replace="fragments/alert :: alert (message='ok', type='basic')"></div>
 <div class="user-section">
     <!--/*@thymesVar id="user" type="com.sda.springcourse.model.User"*/-->
     <h1 th:text="${user.firstName} + ' ' + ${user.lastName}">Szymon Nowak</h1>
@@ -13,10 +22,13 @@
 </br>
 <!--/*@thymesVar id="allNews" type="java.util.List<com.sda.springcourse.model.User>"*/-->
 <div th:if="${allNews}">
-    <div th:if="${allNews.isEmpty()}" class="alert">
-        <h1>There is no news for current user</h1>
+    <div th:if="${allNews.isEmpty()}" >
+        <div th:replace="fragments/alert :: alert(message='There is no news for current user', type='error')" class="alert alert-error">
+            <h1>There is no news for current user</h1>
+        </div>
     </div>
-    <div th:include="fragments/news :: basic-news-table (allNews=${allNews})" th:unless="${allNews.isEmpty()}" style="padding: 0 10% 0 10%">
+    <div th:include="fragments/news :: basic-news-table (allNews=${allNews})"
+         th:unless="${allNews.isEmpty()}" style="padding: 0 10% 0 10%">
         <table border="1">
             <thead style="font-weight: bold;">
             <td>Img</td>
@@ -36,9 +48,12 @@
                 </td>
                 <td>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                        irure
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur
                         sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
                         laborum</p>
                 </td>

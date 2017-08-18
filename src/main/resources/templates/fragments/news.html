@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<div th:fragment="basic-news-table (allNews)" th:assert="${allNews}" style="padding: 0 10% 0 10%">
+<div th:fragment="basic-news-table (allNews)" id="test" th:assert="${allNews}" style="padding: 0 10% 0 10%">
     <table border="1">
         <thead style="font-weight: bold;">
         <td>Img</td>
@@ -33,6 +33,7 @@
         </tbody>
     </table>
 </div>
+
 
 
 </body>
