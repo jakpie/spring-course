@@ -13,7 +13,6 @@
     </style>
 </head>
 <body>
-<div th:replace="fragments/alert :: alert (message='ok', type='basic')"></div>
 <div class="user-section">
     <!--/*@thymesVar id="user" type="com.sda.springcourse.model.User"*/-->
     <h1 th:text="${user.firstName} + ' ' + ${user.lastName}">Szymon Nowak</h1>

@@ -5,14 +5,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class CreationStatusFactory {
 
-    public CreationStatus cassa(CreationStatus creationStatus) {
-        if (creationStatus.isStatus()) {
-            createStatus(creationStatus.isStatus(), creationStatus.getMessage());
-        } else {
-            createStatus(creationStatus.isStatus(), creationStatus.getMessage());
-        }
-    }
-
     public CreationStatus createSuccessStatus(String message) {
         return createStatus(true, message);
     }
