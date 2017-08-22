@@ -1,7 +1,6 @@
 package com.sda.springcourse.controller;
 
 import com.sda.springcourse.model.User;
-import com.sda.springcourse.repository.UserRepository;
 import com.sda.springcourse.service.ReverseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

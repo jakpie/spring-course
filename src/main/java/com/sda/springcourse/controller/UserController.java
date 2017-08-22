@@ -6,8 +6,6 @@ import com.sda.springcourse.model.News;
 import com.sda.springcourse.model.User;
 import com.sda.springcourse.repository.JpaNewsRepository;
 import com.sda.springcourse.repository.JpaUserRepository;
-import com.sda.springcourse.repository.NewsRepository;
-import com.sda.springcourse.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
