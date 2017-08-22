@@ -1,6 +1,15 @@
 package com.sda.springcourse.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name = "userTable")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String firstName;
@@ -10,6 +19,12 @@ public class User {
     private String phoneNumber;
 
     public User() {
+    }
+
+    public User(String firstName, String lastName, String phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
     }
 
     public User(Integer id, String firstName, String lastName, String phoneNumber) {
