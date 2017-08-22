@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,6 +42,12 @@ public class MockNewsRepository implements NewsRepository {
     public boolean add(News news) {
         news.setId(newsList.size()); //possible bug
         newsList.add(news);
+        return true;
+    }
+
+    @Override
+    public boolean remove(Integer id) {
+        newsList.remove(id.intValue());
         return true;
     }
 
